@@ -11,6 +11,7 @@ clearTeams.addEventListener("click", function () {
 	teams = [];
 	console.log(teams);
 	entered.innerHTML = "Teams Entered: ";
+	matchesText.innerHTML = "";
 });
 
 document.addEventListener("keydown", (event) => {
@@ -37,13 +38,28 @@ function addTeamNames() {
 let matchmaker = document.getElementById("createMatchup");
 
 matchmaker.addEventListener("click", matchmaking);
+let matchesText = document.getElementById("matches");
+let used = [];
+let used2 = [];
 
 function matchmaking() {
 	//THIS IS WHERE I NEED HELP
 	let random = Math.floor(Math.random() * teams.length);
-	let used = [];
-	let bracket = document.createElement("div");
-	bracket.setAttribute("id", "bracket");
+	let random2 = Math.floor(Math.random() * teams.length);
+
+	let match = document.createTextNode(
+		`${teams[random]} VS. ${teams[random2]}`
+	);
+	let lineBreak = document.createElement("br");
+	used.push(random);
+	console.log(used);
+	used2.push(random2);
+	console.log(used2);
+	matchesText.appendChild(match);
+	matchesText.appendChild(lineBreak);
+	if (used.length === teams.length) {
+		return;
+	}
 }
 
 //ABOVE CODE IS FOR CREATING MATCHMAKING ^^^
