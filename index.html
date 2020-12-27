@@ -3,13 +3,29 @@
 	<head>
 		<title>Bracket App</title>
 		<meta charset="UTF-8" />
+		<link rel="stylesheet" type="text/css" href="src/styles.css" />
 	</head>
 
 	<body>
-		<h1 id="title">Bracket App</h1>
-		<input type="text" id="add" /><button id="addTeams" onclick="matches()">
-			Add Teams
-		</button>
+		<div id="desc">
+			<h1 id="title">Bracket App</h1>
+			<p id="instructions">
+				Add team names into the input field and then click add team.
+				Once you have inputted all the teams you can click create
+				matchups to get the bracket set up and ready to play! YOU MUST
+				ENTER AN EVEN AMOUNT OF TEAMS! IF YOU HAVE AN ODD NUMBER MAKE A
+				TEAM UP AND THEN GIVE THE REAL PERSON THE WIN LATER ON!
+			</p>
+		</div>
+		<div id="main">
+			<input type="text" id="add" placeholder="Enter Team Name" /><button
+				id="addTeams"
+			>
+				Add Team
+			</button>
+			<button id="createMatchup">Create Matchups</button>
+			<p id="teamsEntered">Teams Entered:</p>
+		</div>
 		<script src="src/index.js"></script>
 	</body>
 </html>
