@@ -1,8 +1,17 @@
+//THIS IS FOR ENTERING TEAMS
+
 let button = document.getElementById("addTeams");
 let entered = document.getElementById("teamsEntered");
+let clearTeams = document.getElementById("clearTeams");
 
 let input = document.getElementById("add");
 let teams = [];
+
+clearTeams.addEventListener("click", function () {
+	teams = [];
+	console.log(teams);
+	entered.innerHTML = "Teams Entered: ";
+});
 
 document.addEventListener("keydown", (event) => {
 	if (event.key === "Enter") {
@@ -20,3 +29,20 @@ function addTeamNames() {
 
 	console.log(teams);
 }
+
+//ABOVE CODE IS FOR ENTERING TEAMS ^^^
+
+//THIS IS FOR CREATING MATCHMAKING
+
+let matchmaker = document.getElementById("createMatchup");
+
+matchmaker.addEventListener("click", matchmaking);
+
+function matchmaking() {
+	let random = Math.floor(Math.random() * teams.length);
+	let used = [];
+	let bracket = document.createElement("div");
+	bracket.classList.add("tournament");
+}
+
+//ABOVE CODE IS FOR CREATING MATCHMAKING ^^^
