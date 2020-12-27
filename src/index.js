@@ -9,7 +9,6 @@ let teams = [];
 
 clearTeams.addEventListener("click", function () {
 	teams = [];
-	console.log(teams);
 	entered.innerHTML = "Teams Entered: ";
 	matchesText.innerHTML = "";
 });
@@ -27,23 +26,14 @@ function addTeamNames() {
 	teams.push(input.value);
 	entered.innerHTML = `Teams Entered: ${teams}`;
 	input.value = "";
-
-	console.log(teams);
 }
-
-//ABOVE CODE IS FOR ENTERING TEAMS ^^^
-
 //THIS IS FOR CREATING MATCHMAKING
 
 let matchmaker = document.getElementById("createMatchup");
 
 matchmaker.addEventListener("click", matchmaking);
 let matchesText = document.getElementById("matches");
-let used = [];
-let used2 = [];
-
 function matchmaking() {
-	//THIS IS WHERE I NEED HELP
 	let random = Math.floor(Math.random() * teams.length);
 	let random2 = Math.floor(Math.random() * teams.length);
 
@@ -51,15 +41,14 @@ function matchmaking() {
 		`${teams[random]} VS. ${teams[random2]}`
 	);
 	let lineBreak = document.createElement("br");
-	used.push(random);
-	console.log(used);
-	used2.push(random2);
-	console.log(used2);
+	let winnerButton = document.createElement("button");
+	let randButton = document.createElement("button");
+	let buttonWinText = document.createTextNode("Select Winner");
+	let buttonRandText = document.createTextNode("Random Winner");
 	matchesText.appendChild(match);
+	matchesText.appendChild(winnerButton);
+	winnerButton.appendChild(buttonWinText);
+	matchesText.appendChild(randButton);
+	randButton.appendChild(buttonRandText);
 	matchesText.appendChild(lineBreak);
-	if (used.length === teams.length) {
-		return;
-	}
 }
-
-//ABOVE CODE IS FOR CREATING MATCHMAKING ^^^
