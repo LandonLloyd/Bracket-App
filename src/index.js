@@ -30,8 +30,10 @@ function addTeamNames() {
 //THIS IS FOR CREATING MATCHMAKING
 
 let matchmaker = document.getElementById("createMatchup");
+let counter = teams.length / 2;
 
 matchmaker.addEventListener("click", matchmaking);
+
 let matchesText = document.getElementById("matches");
 function matchmaking() {
 	let random = Math.floor(Math.random() * teams.length);
