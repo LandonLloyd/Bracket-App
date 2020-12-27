@@ -39,10 +39,11 @@ let matchmaker = document.getElementById("createMatchup");
 matchmaker.addEventListener("click", matchmaking);
 
 function matchmaking() {
+	//THIS IS WHERE I NEED HELP
 	let random = Math.floor(Math.random() * teams.length);
 	let used = [];
 	let bracket = document.createElement("div");
-	bracket.classList.add("tournament");
+	bracket.setAttribute("id", "bracket");
 }
 
 //ABOVE CODE IS FOR CREATING MATCHMAKING ^^^
