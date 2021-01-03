@@ -43,18 +43,13 @@ let matchesText = document.getElementById("matches");
 
 function matchmaking() {
 	let random = Math.floor(Math.random() * teams.length);
+	let firstTeam = teams.splice(random, 1);
+
 	let random2 = Math.floor(Math.random() * teams.length);
-	if (random === random2) {
-		random = Math.floor(Math.random() * teams.length);
-	}
+	let secondTeam = teams.splice(random2, 1);
 
-	let match = document.createTextNode(
-		`${teams[random]} VS. ${teams[random2]}`
-	);
+	let match = document.createTextNode(`${firstTeam} VS. ${secondTeam}`);
 
-	teams.splice(random, 1);
-	teams.splice(random2, 1);
-	console.log(teams);
 	let lineBreak = document.createElement("br");
 	let winnerButton = document.createElement("button");
 	let randButton = document.createElement("button");
@@ -66,4 +61,7 @@ function matchmaking() {
 	matchesText.appendChild(randButton);
 	randButton.appendChild(buttonRandText);
 	matchesText.appendChild(lineBreak);
+
+	//let counter = teams.length / 2;
+	//Make it so that the you don't make more matchups than teams. Find teams that get a bye and make the button functionality!
 }
